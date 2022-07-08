@@ -1,0 +1,221 @@
+*{
+    font-family: 'Fredoka One', cursive; 
+    
+}
+
+body{
+    width: 100%;
+}
+#head1>a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+#head1{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+}
+#header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: url("../img/madera_negra.jpg");
+}
+#head2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+
+}
+#carouselExampleCaptions{
+    margin-bottom: 30px;
+    width: 100%;
+    
+}
+
+#footer2>{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/madera_negra.jpg");
+    bottom: 0;
+    
+ 
+}
+#head3>a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+#head3{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/madera_negra.jpg");
+    bottom: 0%;
+  
+
+}
+
+
+#subtitulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#Productos1{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    
+    
+   
+    margin: auto;
+  
+    
+}
+
+#bodyout{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#navProductos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-left:10px ;
+    margin-right: 10px;
+  
+}
+
+#objetos{
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    align-items: center;
+}
+
+#objetos>a>img{
+    width: 120px;
+    border-radius: 100px;
+    opacity: 80%;
+    transition-duration: 0.5s;
+}
+
+#objetos>a>img:hover{
+    opacity: 110%;
+    transition-duration: 0.5s;
+    transform: scale(1.1);
+}
+
+.card{
+    width: 18rem;
+    margin: 20px;
+    border-color: rgb(197, 197, 197); 
+    border-style: ridge ;
+    border-width: 2px;
+    transition-duration: 0.5s;
+}
+
+.card:hover{
+    border-style: solid ;
+    border-color: green;
+    transition-duration: 0.5s;
+}
+
+#vistaProducto>#producto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+
+}
+#vistaProducto>#producto>#datos{
+    border-style: solid;
+    border-radius: 15px;
+    border-left-color: green;
+}
+#vistaProducto>#descripcion{
+    border-style: solid;
+    border-radius: 15px;
+    border-left-color: green;
+}
+
+
+
+
+#login{
+    background: url("../img/fondo_flor.jpg");
+ 
+
+    
+
+}
+
+
+@media (max-width: 1020px){
+    #vistaProducto>#producto{
+        display: flex;
+        flex-direction: column;
+    
+
+    }
+}
+@media (max-width: 850px){
+    #header{
+        display: flex;
+        flex-direction: column;
+    
+
+    }
+}
+@media (max-width: 540px){
+    #header>#head{
+        display: flex;
+        flex-direction: column;
+    
+
+    }
+}
+
+@media (max-width: 800px){
+    #navProductos{
+        display: flex;
+        flex-direction: column;
+    
+
+    }
+}
+@media (max-width: 850px){
+    #Productos1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+      
+      
+    
+
+    }
+}

@@ -1,0 +1,10 @@
+{% extends 'core/plantilla.html' %}
+{% load static %}
+{% block contenido %}
+<div id="bodyout"> 
+    <img src="{% static 'core/img/LOGEOUT.png' %}"  alt="" style=" border-radius:100%;">
+    
+    <br>
+    <a class="btn btn-danger btn-lg" href="{% url 'home' %}" role="button" style=" margin-bottom: 10px;">Volver al Menu Principal</a>
+</div>
+{% endblock %}

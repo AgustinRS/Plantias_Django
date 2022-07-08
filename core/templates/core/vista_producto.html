@@ -1,0 +1,116 @@
+{% extends 'core/plantilla.html' %}
+{% load static %}
+{% block contenido %}
+
+
+<nav class="navbar navbar-expand-lg navbar-light " style=" background-color: white;">
+    <div class="container-fluid">
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div id="navProductos">
+  
+          <div id="objetos">
+              <a href="{% url 'plantas_semillas' %}"><img src="{% static 'core/img/planta_semillas_menu.jpg' %}" alt="" ></a>
+              <p>Plantas y Semillas</p>
+          </div>
+  
+          <div id="objetos">
+             <a href="{% url 'macetas' %}"><img src="{% static 'core/img/macetas_menu.jpg' %}" alt="" ></a>
+             <p>Macetas</p>
+          </div>
+  
+          <div id="objetos">
+             <a href="{% url 'tierra_fertilizante' %}"><img src="{% static 'core/img/tierra_fertilizante_menu.jpg' %}" alt="" ></a>
+             <p>Tierra y Fertilizante</p>
+          </div>
+  
+          <div id="objetos">
+            <a href="{% url 'accesorios' %}"><img src="{% static 'core/img/porta_maceta_accesorios_menu.jpg' %}" alt="" ></a>
+            <p>Accesorios</p>
+          </div>
+          
+          <div id="objetos">
+            <a href="{% url 'insecticidas' %}"><img src="{% static 'core/img/incecticida_suplementos_menu.jpg' %}" alt="" ></a>
+            <p>Incecticida</p>
+          </div>
+  
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+  
+  
+
+
+
+  <div id="subtitulo" >
+      <div><h1> Producto Actual</h1></div>
+      <div><img src="{% static 'core/img/plant.png' %}" alt=""></div>
+  </div>
+ 
+ 
+ 
+
+<div id="vistaProducto">
+    {% for ve in producto %}
+    <div id="producto">
+
+        <div id="imagen">
+            <img src="{{ve.imagen.url}} " alt="..." style="width: 400px; margin:auto;">
+        </div>  
+
+        <div id="datos"style="width: 60%;margin:10px;">
+
+                <div class="card-header">
+                    <div id="head1">
+                       <img src="{% static 'core/img/logo.png' %}"  alt="" style="  width: 10%;">
+                       <p>PLANTITAS</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><h1>{{ve.nombre}} </h1></li>
+                  <li class="list-group-item"><h4>Categoria: {{ve.categoria}} </h4></li>
+                  <li class="list-group-item"><h5>Stock: {{ve.stock}}</h5></li>
+                  <li class="list-group-item"><h2>${{ve.precio}} C/U</h2></li>
+                  <li class="list-group-item"><a class="btn btn-primary" href="{% url 'add' ve.idProducto %}" role="button">Agregar al Carrito</a>
+                  </li>
+                </ul>
+            
+        </div>      
+        
+    </div>
+
+    <div id="descripcion"style="margin: 5px">
+
+        <div class="card-header">
+            <h2 style=" background-color:green; border-radius: 10px;">Descripción</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+
+          <li class="list-group-item"><h4>°{{ve.descripcion}} </h4></li>
+         
+        </ul>
+
+            
+    </div>  
+
+    {% endfor %}
+    
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

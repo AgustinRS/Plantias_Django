@@ -1,0 +1,32 @@
+{% extends 'core/plantilla.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block contenido %}
+
+<div id="formulario1" >
+    <div id="subtitulo" >
+        <div><h1> Modificar Producto </h1></div>
+        <div><img src="{% static 'core/img/maceta_agregar.png' %}" alt=""></div>
+    </div>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+
+        <a class="btn btn-danger btn-lg" href="{% url 'admin_producto'  %}" role="button" style=" margin-top: 20px;">Volver</a>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end"style=" margin-top: 20px;">
+
+           <button type="reset" class="btn btn-secondary btn-lg" >Limpiar</button>
+           <button type="submit" class="btn btn-success btn-lg ">Enviar</button>
+
+        </div>
+
+    </form>
+
+    <h1>{{mensaje}}</h1>
+
+</div>
+
+{% endblock %}

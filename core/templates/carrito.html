@@ -1,0 +1,53 @@
+<div>
+    
+<table class="table">
+    <thead>
+      <tr>
+      
+        <th scope="col">nombre</th>
+        <th scope="col">precio</th>
+        <th scope="col">cantidad</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+  
+  {% if request.session.carrito.items %}
+  {% for key, value in request.session.carrito.items %}
+      <tr>
+        
+        <td>{{value.nombre}}</td>
+        <td>{{value.precio}}</td>
+        <td>{{value.acomulado}}
+          <a href="{% url 'add' value.producto_id %}">+</a>
+          <a href="{% url 'sub' value.producto_id %}">-</a>
+        </td>
+      </tr>
+  {% endfor %}
+  {% else %}
+      <tr>
+        
+        <td>sin producto</td>
+        
+        </td>
+      </tr>
+  {% endif %}
+  <tr>
+    <th>total: </th>
+    <td>$ {{total_carrito}}</td>
+    
+    </td>
+  </tr>
+     
+      
+    </tbody>
+  </table>
+  
+  <a class="btn btn-primary" href="{% url 'CLS' %}" role="button">limpiar</a>
+  <a class="btn btn-primary" href="#" role="button">Pago</a>
+  
+  
+  
+  
+  
+</div>

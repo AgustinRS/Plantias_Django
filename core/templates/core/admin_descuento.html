@@ -1,0 +1,61 @@
+{% extends 'core/plantilla.html' %}
+{% load static %}
+{% block contenido %}
+
+
+    <div id="subtitulo" >
+        <div><h1> Lista de Productos </h1></div>
+        <div><img src="{% static 'core/img/maceta_agregar.png' %}" alt=""></div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" style='margin-bottom : 20px;'>
+      <a class="btn btn-secondary" href="{% url 'admin_producto' %}" role="button"><img src="{% static 'core/img/icons8_flower_50px.png' %}" alt="..." > Administrar Productos</a>
+      <a class="btn btn-secondary" href="{% url 'admin_descuento' %}" role="button"><img src="{% static 'core/img/icons8_sale_50px_1.png' %}" alt="..." > Administrar Descuentos</a>
+        <a class="btn btn-success" href="{% url 'agregar_descuento' %}" role="button"><img src="{% static 'core/img/mas.png' %}" alt="..." > Añador Nuevo Descuento</a>
+    </div>
+
+    <div cass="row">
+        <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Porcentaje Descuento</th>
+                
+                <th scope="col"></th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+
+            <tbody>
+            {% for ve in descuento %}
+              <tr>
+                <td>{{ve.idDescuento}}</td>
+                <td>{{ve.nombreDescuento}}</td>
+                <td>{{ve.porcetajeDescuento}}</td>
+                
+                <td><a class="btn btn-info" href="{% url 'modi_descuento' ve.idDescuento %}" role="button">Editar</a></td>
+                <td><a class="btn btn-danger" href="{% url 'eliminarDescuento' ve.idDescuento %}" role="button">Eliminar</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>    
+
+</div>
+{% if messages %}
+
+    {% for m in messages %}
+        <script>
+          Swal.fire({
+            "title": "Felicitaciones",
+            "text":"{{m}}",
+            "icon":"success"
+          })
+        </script>
+        {% endfor %}
+
+{% endif %}
+
+
+
+{% endblock %}
