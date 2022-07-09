@@ -152,7 +152,8 @@ def registro(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(to="login")
+            messages.success(request, 'Usuario Registrado Correctamente')
+            return redirect(to="home")
     return render(request, 'core/registro.html', {'form':form})
      
     
