@@ -7,3 +7,6 @@ class ProductoSerializer(serializers.ModelSerializer):
         model = Producto
         fields = ['idProducto', 'nombre', 'stock', 'precio', 'descripcion', 'imagen', 'categoria', 'descuento']
             
+            
+            
+"""serializer agregado"""
